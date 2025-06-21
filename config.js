@@ -5,20 +5,20 @@ const portfolioConfig = {
     // Personal Information
     personal: {
         name: "Raghu Kishore Vempati",
-        title: "Direction of Engineering Innovation",
-        email: "your.email@example.com", // Update with your actual email
+        title: "Director of Engineering Innovation",
+        email: "raghu.vempati@gmail.com", // Update with your actual email
         location: "Hyderabad, Telangana, IN"
     },
     
     // Social Media Links
     social: {
         email: {
-            url: "mailto:your.email@example.com", // Update with your actual email
+            url: "mailto:raghu.vempati@gmail.com", // Update with your actual email
             icon: "📧",
             label: "Email"
         },
         linkedin: {
-            url: "https://linkedin.com/in/yourprofile", // Update with your LinkedIn profile
+            url: "https://linkedin.com/in/raghuvempati", // Update with your LinkedIn profile
             icon: "💼",
             label: "LinkedIn"
         },
@@ -28,7 +28,7 @@ const portfolioConfig = {
             label: "GitHub"
         },
         x: {
-            url: "https://x.com/yourhandle", // Update with your X (Twitter) handle
+            url: "https://x.com/raghuvempati", // Update with your X (Twitter) handle
             icon: "𝕏",
             label: "X"
         }
