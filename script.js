@@ -156,3 +156,14 @@ window.portfolioFunctions = {
     setupContactLinks,
     updatePageTitle
 };
+
+// Example rendering logic in script.js
+const contactLinks = document.getElementById('contactLinks');
+Object.values(portfolioConfig.social).forEach(social => {
+    const a = document.createElement('a');
+    a.href = social.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.innerHTML = `<i class="${social.icon}"></i> ${social.label}`;
+    contactLinks.appendChild(a);
+});
