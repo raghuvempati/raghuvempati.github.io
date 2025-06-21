@@ -94,23 +94,30 @@ function setupScrollAnimations() {
 // Setup contact links from configuration
 function setupContactLinks() {
     const contactLinksContainer = document.getElementById('contactLinks');
-    if (!contactLinksContainer) return;
-    
+    if (!contactLinksContainer || typeof portfolioConfig === "undefined" || !portfolioConfig.social) return;
+
     // Clear existing content
     contactLinksContainer.innerHTML = '';
-    
+
+    // Helper to add a link
+    function addLink(social) {
+        const a = document.createElement('a');
+        a.href = social.url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = "contact-link";
+        // Only the icon uses innerHTML (safe because config is static and controlled)
+        a.innerHTML = `<i class="${social.icon}"></i> <span></span>`;
+        a.querySelector('span').textContent = social.label;
+        contactLinksContainer.appendChild(a);
+    }
+
     // Add main social links
-    Object.entries(portfolioConfig.social).forEach(([key, social]) => {
-        const link = createContactLink(social.url, social.icon, social.label);
-        contactLinksContainer.appendChild(link);
-    });
-    
+    Object.values(portfolioConfig.social).forEach(addLink);
+
     // Add additional social links if configured
     if (portfolioConfig.additionalSocial) {
-        Object.entries(portfolioConfig.additionalSocial).forEach(([key, social]) => {
-            const link = createContactLink(social.url, social.icon, social.label);
-            contactLinksContainer.appendChild(link);
-        });
+        Object.values(portfolioConfig.additionalSocial).forEach(addLink);
     }
 }
 
@@ -156,18 +163,3 @@ window.portfolioFunctions = {
     setupContactLinks,
     updatePageTitle
 };
-
-document.addEventListener("DOMContentLoaded", function () {
-    const contactLinks = document.getElementById("contactLinks");
-    if (contactLinks && typeof portfolioConfig !== "undefined" && portfolioConfig.social) {
-        Object.values(portfolioConfig.social).forEach(social => {
-            const a = document.createElement("a");
-            a.href = social.url;
-            a.target = "_blank";
-            a.rel = "noopener";
-            a.className = "contact-link";
-            a.innerHTML = `<i class="${social.icon}"></i> <span>${social.label}</span>`;
-            contactLinks.appendChild(a);
-        });
-    }
-});
