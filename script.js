@@ -122,13 +122,37 @@ function setupContactLinks() {
     }
 }
 
+// function setupTimeline() {
+//     const timelineContainer = document.getElementById('timelineContainer');
+//     if (!timelineContainer || !portfolioConfig.experience) return;
+
+//     timelineContainer.innerHTML = '';
+
+//     portfolioConfig.experience.forEach((exp, idx) => {
+//         const item = document.createElement('div');
+//         item.className = 'timeline-item';
+
+//         item.innerHTML = `
+//             <div class="timeline-logo">
+//                 <img src="${exp.logo}" alt="${exp.company} logo" loading="lazy"/>
+//             </div>
+//             <div class="timeline-content">
+//                 <h3 class="timeline-company">${exp.company}</h3>
+//                 <div class="timeline-period">${exp.period}</div>
+//                 <div class="timeline-role">${exp.role}</div>
+//             </div>
+//         `;
+//         timelineContainer.appendChild(item);
+//     });
+// }
+
 function setupTimeline() {
     const timelineContainer = document.getElementById('timelineContainer');
     if (!timelineContainer || !portfolioConfig.experience) return;
 
     timelineContainer.innerHTML = '';
 
-    portfolioConfig.experience.forEach((exp, idx) => {
+    portfolioConfig.experience.forEach(exp => {
         const item = document.createElement('div');
         item.className = 'timeline-item';
 
