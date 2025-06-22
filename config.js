@@ -47,6 +47,27 @@ const portfolioConfig = {
         //     label: "YouTube"
         // }
     },
+
+    experience: [
+        {
+            company: "Capgemini Engineering",
+            logo: "assets/capgemini-logo.svg", // Place SVG/PNG in assets/
+            period: "Jan 2015 – Current",
+            role: "Director of Engineering Innovation"
+        },
+        {
+            company: "Microsoft",
+            logo: "assets/microsoft-logo.svg",
+            period: "May 2013 – Dec 2014",
+            role: "Development Lead"
+        },
+        {
+            company: "Infosys",
+            logo: "assets/infosys-logo.svg",
+            period: "Oct 2004 – May 2013",
+            role: "Technology Architect"
+        }
+    ],
     
     // Contact preferences
     contact: {
